@@ -1,2 +1,2 @@
 # screen-sections
-Fullscreen sections which beautiful scroll effect.
+Fullscreen sections with beautiful scroll effect.
