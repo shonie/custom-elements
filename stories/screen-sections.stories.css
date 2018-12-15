@@ -1,0 +1,27 @@
+.section-content {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  font-family: 'Courier New', Courier, monospace;
+  font-weight: 900;
+  font-size: 32px;
+  letter-spacing: 2px;
+}
+
+.section-content:nth-child(3n - 2) {
+  background-color: pink;
+}
+
+.section-content:nth-child(3n - 1) {
+  background-color: tomato;
+}
+
+.section-content:nth-child(3n) {
+  background-color: red;
+}
+
+.high {
+  height: 200vh;
+}

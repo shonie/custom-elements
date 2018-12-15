@@ -4,7 +4,9 @@
   "plugins": ["prettier"],
   "rules": {
     "prettier/prettier": ["error"],
-    "strict": 0
+    "strict": 0,
+    "import/prefer-default-export": 0,
+    "import/no-extraneous-dependencies": 0
   },
   "env": {
     "browser": true,

@@ -30,7 +30,9 @@
     "url": "https://github.com/shonie/screen-sections/issues"
   },
   "homepage": "https://github.com/shonie/screen-sections#readme",
-  "dependencies": {},
+  "dependencies": {
+    "css-scroll-snap-polyfill": "^0.1.2"
+  },
   "devDependencies": {
     "@babel/cli": "^7.2.0",
     "@babel/core": "^7.2.0",
