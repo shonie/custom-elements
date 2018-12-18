@@ -19,7 +19,7 @@ storiesOf('elements/screen-sections', module)
       </screen-sections>
     `;
   })
-  .add('Stress test', () => {
+  .add('Stress test (1000 sections)', () => {
     const screenSections = document.createElement('screen-sections');
     let html = '';
     for (let i = 0; i <= 1000; i++) {
@@ -28,7 +28,7 @@ storiesOf('elements/screen-sections', module)
     screenSections.insertAdjacentHTML('beforeend', html);
     return screenSections;
   })
-  .add('Stress test (Unequal height distribution)', () => {
+  .add('Extreme test (15000 sections and unequal height distribution)', () => {
     const screenSections = document.createElement('screen-sections');
     let html = '';
     for (let i = 0; i <= 1000; i++) {
