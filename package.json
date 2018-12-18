@@ -1,7 +1,7 @@
 {
-  "name": "screen-sections",
+  "name": "custom-elements",
   "version": "0.0.1",
-  "description": "Fullscreen sections with beautiful scroll effect.",
+  "description": "Various custom elements",
   "main": "lib/index.js",
   "scripts": {
     "eslint": "eslint",
@@ -9,13 +9,13 @@
     "wct": "wct",
     "test": "npm run wct",
     "lint": "npm run eslint src",
-    "build": "node_modules/.bin/babel src --out-file lib/index.js",
+    "build": "rm -rf lib && node_modules/.bin/babel src --out-dir lib",
     "storybook": "start-storybook -p 6006",
     "build-storybook": "build-storybook"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/shonie/screen-sections.git"
+    "url": "git+https://github.com/shonie/custom-elements.git"
   },
   "keywords": [
     "web",
@@ -27,9 +27,9 @@
   "author": "shonie",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/shonie/screen-sections/issues"
+    "url": "https://github.com/shonie/custom-elements/issues"
   },
-  "homepage": "https://github.com/shonie/screen-sections#readme",
+  "homepage": "https://github.com/shonie/custom-elements#readme",
   "dependencies": {
     "css-scroll-snap-polyfill": "^0.1.2"
   },

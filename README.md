@@ -1,2 +1,2 @@
-# screen-sections
-Fullscreen sections with beautiful scroll effect.
+# custom-elements
+Various custom elements
