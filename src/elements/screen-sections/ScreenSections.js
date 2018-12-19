@@ -53,9 +53,10 @@ export default class ScreenSections extends HTMLElement {
         }
       });
     });
+  }
 
+  connectedCallback() {
     this._observer.observe(this, {
-      attributes: true,
       childList: true,
     });
   }
@@ -74,7 +75,7 @@ export default class ScreenSections extends HTMLElement {
   _testEqualHeightDistribution() {
     const parent = this.shadowRoot.getElementById('sections-wrapper');
     const sections = this.shadowRoot.getElementById('sections');
-    const [ childNode ] = sections.assignedElements();
+    const [childNode] = sections.assignedElements();
     const parentHeight = parent.clientHeight;
     const childHeight = childNode.clientHeight;
     const distributedEqually = Math.floor(parentHeight % childHeight) === 0;
