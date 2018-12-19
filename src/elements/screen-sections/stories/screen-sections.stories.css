@@ -23,5 +23,15 @@
 }
 
 .high {
+  position: relative;
   height: 200vh;
+}
+
+.high:after {
+  content: 'Bottom content is not missed here';
+  display: block;
+  position: absolute;
+  bottom: 100px;
+  left: 50%;
+  transform: translateX(-50%);
 }

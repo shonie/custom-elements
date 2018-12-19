@@ -28,11 +28,11 @@ storiesOf('elements/screen-sections', module)
     screenSections.insertAdjacentHTML('beforeend', html);
     return screenSections;
   })
-  .add('Extreme test (15000 sections and unequal height distribution)', () => {
+  .add('Extreme test (5000 sections and unequal height distribution)', () => {
     const screenSections = document.createElement('screen-sections');
     let html = '';
-    for (let i = 0; i <= 15000; i++) {
-      html += i % 2 ? getSection(i + 1) : getSection(i + 1, 'high');
+    for (let i = 0; i <= 5000; i++) {
+      html += i % 3 ? getSection(i + 1) : getSection(i + 1, 'high');
     }
     screenSections.insertAdjacentHTML('beforeend', html);
     return screenSections;

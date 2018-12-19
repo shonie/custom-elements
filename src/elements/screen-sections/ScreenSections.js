@@ -53,9 +53,7 @@ export default class ScreenSections extends HTMLElement {
         }
       });
     });
-  }
 
-  connectedCallback() {
     this._observer.observe(this, {
       childList: true,
     });
