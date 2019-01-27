@@ -1,3 +1,3 @@
-import ScreenSections from './ScreenSections';
+import SnappingScreenSections from './SnappingScreenSections';
 
-window.customElements.define('screen-sections', ScreenSections);
+window.customElements.define('snapping-scroll-sections', SnappingScreenSections);
