@@ -1,5 +1,5 @@
 # Overview
-This package provides simple wrapper (with help of Custom Elements) for the implementation of [scroll-snapping](https://www.w3.org/TR/css-scroll-snap-1/) effect.
+This package provides a simple wrapper (with help of Custom Elements) for the implementation of [scroll-snapping](https://www.w3.org/TR/css-scroll-snap-1/) effect.
 
 # Usage
 Wrap your layout by `<snapping-scroll-sections>` tag like this:
