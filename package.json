@@ -10,7 +10,7 @@
     "test": "npm run wct",
     "lint": "npm run eslint src",
     "build": "rm -rf lib && node_modules/.bin/babel src --out-dir lib",
-    "storybook": "start-storybook -p 6006",
+    "start": "start-storybook -p 6006",
     "build-storybook": "build-storybook -o docs"
   },
   "repository": {
