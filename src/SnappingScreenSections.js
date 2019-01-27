@@ -2,7 +2,7 @@ import scrollSnapPolyfill from 'css-scroll-snap-polyfill';
 
 scrollSnapPolyfill();
 
-export default class ScreenSections extends HTMLElement {
+export default class SnappingScrollSections extends HTMLElement {
   get _stylesheet() {
     return `
       :host {
