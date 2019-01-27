@@ -1,7 +1,7 @@
 {
-  "name": "custom-elements",
+  "name": "snapping-scroll-sections",
   "version": "0.0.1",
-  "description": "Various custom elements",
+  "description": "HTML5 Custom element for scroll-snap effect",
   "main": "lib/index.js",
   "scripts": {
     "eslint": "eslint",
@@ -15,21 +15,24 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/shonie/custom-elements.git"
+    "url": "git+https://github.com/shonie/snapping-scroll-sections.git"
   },
   "keywords": [
-    "web",
-    "component",
+    "web-components",
+    "custom-elements",
     "scroll",
     "fullpage",
-    "scroll-snap"
+    "scroll-snap",
+    "scroll-snapping",
+    "snapping",
+    "html5"
   ],
   "author": "shonie",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/shonie/custom-elements/issues"
+    "url": "https://github.com/shonie/snapping-scroll-sections/issues"
   },
-  "homepage": "https://github.com/shonie/custom-elements#readme",
+  "homepage": "https://github.com/shonie/snapping-scroll-sections#readme",
   "dependencies": {
     "css-scroll-snap-polyfill": "^0.1.2"
   },
@@ -49,7 +52,6 @@
     "eslint-plugin-jsx-a11y": "^6.1.2",
     "eslint-plugin-prettier": "^3.0.0",
     "eslint-plugin-react": "^7.11.1",
-    "prettier": "^1.15.3",
-    "web-component-tester": "^6.9.0"
+    "prettier": "^1.15.3"
   }
 }

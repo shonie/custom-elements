@@ -3,7 +3,7 @@ import '..';
 import './screen-sections.stories.css';
 
 const getSection = (i, classList = '') => `
-  <div class="section-content ${classList}" slot="sections">Slide ${i}</div>
+  <div class="section-content ${classList}">Slide ${i}</div>
 `;
 
 storiesOf('elements/screen-sections', module)

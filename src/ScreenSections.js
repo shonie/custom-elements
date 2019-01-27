@@ -40,7 +40,7 @@ export default class ScreenSections extends HTMLElement {
     shadow.innerHTML = `
       <style>${this._stylesheet}</style>
       <div id="sections-wrapper">
-        <slot id="sections" name="sections"></slot>
+        <slot id="sections"></slot>
       </div>
     `;
 
