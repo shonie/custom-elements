@@ -4,14 +4,14 @@ This package provides simple wrapper (with help of Custom Elements) for the impl
 # Usage
 Wrap your layout by `<snapping-scroll-sections>` tag like this:
 ```html
-<scroll-snapping-sections>
+<snapping-scroll-sections>
     <section class="your-section">
         Section 1
     </section>
     <section class="your-section">
         Section 2
     </section>
-</scroll-snapping-sections>
+</snapping-scroll-sections>
 ```
 Direct children of `scroll-snapping-element` will be slotted to the default slot and will get these css properties:
 ```css
@@ -22,7 +22,7 @@ scroll-snap-stop: always;
 ```
 While host element will get:
 ```css
-/* it will be "scroll-snap-type: y proximity;" in case if direct children will have not equal heights
+/* it will be "scroll-snap-type: y proximity;" in case if direct children will have not equal heights */
 scroll-snap-type: y mandatory;
 ```
 
