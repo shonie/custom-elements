@@ -8,6 +8,8 @@ const style = `
     left: 48px;
     top: 50%;
     transform: translateY(-50%);
+    height: 66px;
+    overflow-y: hidden;
     color: white;
     z-index: 3;
     font-family: 'Courier New', Courier, monospace;
@@ -16,6 +18,11 @@ const style = `
     font-weight: 900;
     text-transform: uppercase;
     letter-spacing: 1.3px;
+  }
+
+  #controls-inner-wrapper {
+    transform: translateY(0);
+    transition: transform 250ms ease-in-out;
   }
 
   .title {
@@ -56,6 +63,9 @@ export default class SnappingScrollControls extends HTMLElement {
     shadow.innerHTML = `
       <style>${style}</style>
       <div id="controls">
+        <div id="controls-inner-wrapper">
+
+        </div>
       </div>
     `;
 
@@ -72,6 +82,10 @@ export default class SnappingScrollControls extends HTMLElement {
     this.sections.get('sections').addEventListener('slotchange', this._handleSlotChange);
 
     this.sections.addEventListener(SNAP_CHANGE, this._setActive);
+
+    this.get('controls').addEventListener('pointerdown', e => {
+      console.log(e);
+    });
   }
 
   disconnectedCallback() {
@@ -93,12 +107,24 @@ export default class SnappingScrollControls extends HTMLElement {
   };
 
   _render() {
+    const CONTROLS_COUNT = 3;
+
     const elements = this.sections.getUserElements();
+
+    const startIndex = this._active === 0 ? 0 : Math.ceil(this._active - CONTROLS_COUNT / 2);
+
+    const shownControls =
+      this._active === elements.length - 1
+        ? elements.slice(-CONTROLS_COUNT)
+        : elements.slice(startIndex, startIndex + CONTROLS_COUNT);
 
     const divs = elements.map((el, i) => {
       const title = el.getAttribute('data-title');
 
-      const isActive = i === this._active;
+      const originalIndex = i;
+      // const originalIndex = elements.indexOf(el);
+
+      const isActive = this._active === originalIndex;
 
       const div = document.createElement('div');
 
@@ -108,7 +134,7 @@ export default class SnappingScrollControls extends HTMLElement {
         div.classList.add('active');
       }
 
-      div.addEventListener('click', () => this.sections.scrollTo(i));
+      div.addEventListener('click', () => this.sections.scrollTo(originalIndex));
 
       div.innerHTML = isActive ? title : '';
 
@@ -121,8 +147,21 @@ export default class SnappingScrollControls extends HTMLElement {
       fragment.appendChild(div);
     }
 
-    this.get('controls').innerHTML = '';
+    const controls = this.get('controls-inner-wrapper').childNodes;
 
-    this.get('controls').appendChild(fragment);
+    const activeControl = controls[this._active];
+
+    const firstShownControl = controls[Math.ceil(this._active - CONTROLS_COUNT / 2)];
+
+    const y =
+      activeControl === undefined
+        ? 0
+        : firstShownControl === undefined
+        ? activeControl.offsetTop
+        : firstShownControl.offsetTop;
+
+    this.get('controls-inner-wrapper').style.transform = `translateY(${-y}px)`;
+    this.get('controls-inner-wrapper').innerHTML = '';
+    this.get('controls-inner-wrapper').appendChild(fragment);
   }
 }
